@@ -71,16 +71,23 @@ button {
 }
 
 #clearBtn {
-    background-color: #ff4f4f;
+    background-color: #8d7373;
     color: #fff;
 }
 
+#undoBtn {
+    background-color: #d6a584;
+    color: #fff;
+}
+
+
 #saveBtn {
-    background-color: #4caf50;
+    background-color: #8da298;
     color: #fff;
 }
 
 #retrieveBtn {
-    background-color: #ffa500;
+    background-color: #d69584;
     color: #fff;
 }
+
