@@ -1,0 +1,209 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-image: url('https://wallpapers.com/images/hd/minimalist-vintage-1920-x-1080-wallpaper-h18al5zfcc6wozfv.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Container for Form */
+.container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 8px;
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Login Heading */
+.login-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff; 
+    margin-bottom: 20px;
+    text-transform: none; 
+    letter-spacing: 1px;
+}
+
+/* Sign Up Heading */
+.signup-heading {
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff; 
+    margin-bottom: 20px;
+    text-transform: none; 
+    letter-spacing: 1px;
+}
+
+/* Input Fields and Labels */
+label {
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #fff;
+    margin-left: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    outline: none;
+    font-size: 14px;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #f7ca00;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+button:focus {
+    outline: none;
+}
+
+.auth-btn {
+    background-color: #f7ca00;
+    color: #fff;
+}
+
+.auth-btn:hover {
+    background-color: #ffb400;
+    transform: scale(1.05);
+}
+
+/* Link Styling */
+p {
+    margin-top: 15px;
+    color: #fff;
+}
+
+a {
+    color: #f7ca00;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
+footer {
+    font-size: 12px;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.navbar .logo img {
+    max-width: 100px;
+}
+
+/* Footer Styles */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 14px; 
+}
+
+.footer .connect {
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+
+.footer .connect p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer .social-icons a img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer .social-icons a img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.name {
+    margin-left: 50px;
+}
+
+.name p {
+    font-size: 14px;
+}
+
+.alink {
+    color: #fff;
+}
+
+.alink:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    font-size: 14px;
+}
