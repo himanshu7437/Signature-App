@@ -52,14 +52,42 @@ document.getElementById("clearBtn").addEventListener("click", () => {
     localStorage.removeItem("savedSignature"); // Clear saved signature from localStorage
 });
 
-// Save & Download Canvas
+// Save & Download Canvas in various formats (JPEG, PNG, GIF)
 document.getElementById("saveBtn").addEventListener("click", () => {
     const signatureData = canvas.toDataURL(); // Get canvas as image data
     localStorage.setItem("savedSignature", signatureData); // Save signature to localStorage
 
+    const format = document.getElementById('fileFormat').value; // Get selected file format
+    const bgColor = canvas.style.backgroundColor || "#FFFFFF"; // Get the current background color (default to white)
+
+    let mimeType = 'image/png'; // Default format is PNG
+    if (format === 'jpeg') {
+        mimeType = 'image/jpeg';
+    } else if (format === 'gif') {
+        mimeType = 'image/gif';
+    }
+
+    // Backup current canvas state
+    const backupCanvas = document.createElement('canvas');
+    const backupCtx = backupCanvas.getContext('2d');
+    backupCanvas.width = canvas.width;
+    backupCanvas.height = canvas.height;
+
+    // Apply background color for JPEG and GIF formats only
+    if (format === 'jpeg' || format === 'gif') {
+        // Fill the background with the selected background color
+        backupCtx.fillStyle = bgColor;
+        backupCtx.fillRect(0, 0, backupCanvas.width, backupCanvas.height);
+    }
+
+    // Draw the signature on top of the background
+    backupCtx.drawImage(canvas, 0, 0);
+
+    const dataUrl = backupCanvas.toDataURL(mimeType); // Convert backup canvas to the selected image format
+
     const link = document.createElement("a");
-    link.download = "signature.png";
-    link.href = signatureData;
+    link.download = `signature.${format}`; // Set filename based on selected format
+    link.href = dataUrl;
     link.click();
 });
 
