@@ -19,6 +19,7 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    margin-top: 80px;
 }
 
 .controls {
@@ -118,47 +119,88 @@ button {
 }
 
 /* Navbar Styles */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.navbar{
     width: 100%;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0);
-    position: fixed;
-    top: 0;
-    left: 0;
+    position: absolute;
+    top:2px;
 }
+/*horizontal nav */
+nav{
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.1);
 
-.logo img {
-    height: 60px;
-    width: auto;
-    margin-left: 10px;
-    margin-top: 5px;
 }
-
-.nav-links {
+ nav ul {
+    width: 100%;
     list-style: none;
     display: flex;
-    margin-right: 60px;
-    padding: 0;
-}
+    justify-content:right;
+    align-items: center;
+ }
+  nav li{
+    height: 50px;
 
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
+  }
+  .menuicon,.logo ,nav li a{
+   height: 100%;
     text-decoration: none;
-    color: #737373;
-    font-size: 18px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+  nav li:hover{
+    background-color: #eecfb0e6;
+  }
+  nav li :first-child{
+    margin-right :auto;
+  }
+  .navbar li a{
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+ .menubar{
+  display: none;
+ }
 
-.nav-links a:hover {
-    color: #000;
+/*responsive hnav */
+@media (max-width:786px){
+  .hnavbar{
+    display: none;
+  }
+  .menubar{
+    width:100%;
+    background-color: white;
+  }
 }
+  /*side bar */
+  .sidebar{
+    position:fixed;
+    top:0px;
+    left: 0;
+    height: 100%;
+    width: 350px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(1px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color:white; 
+  }
+  .sidebar li{
+    width: 350px;
+  }
+  .sidebar a{
+    width:100% ;
+    text-decoration: none;
+  }
+  /*logo img */
+  nav ol li{
+    list-style: none;
+  }
 
 /* Footer Styles */
 .footer {

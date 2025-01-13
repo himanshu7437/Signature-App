@@ -121,3 +121,14 @@ canvas.addEventListener('mousemove', draw);
 
 // Undo action
 document.getElementById('undoBtn').addEventListener('click', undo);
+
+//Navbar
+function showsidebar() {
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'flex'
+}
+function hidesidebar(){
+    const sidebar = document.querySelector('.sidebar')
+    sidebar.style.display = 'none'
+}
+
