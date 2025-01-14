@@ -18,7 +18,10 @@ function endPosition() {
 // Draw on Canvas
 function draw(e) {
     if (!painting) return;
-    ctx.lineWidth = document.getElementById("fontSize").value;
+    
+    // Get the selected font size (remove "px" and convert to number)
+    const fontSize = parseInt(document.getElementById("fontSize").value);
+    ctx.lineWidth = fontSize;
     ctx.lineCap = "round";
     ctx.strokeStyle = document.getElementById("textColor").value;
 
@@ -131,4 +134,3 @@ function hidesidebar(){
     const sidebar = document.querySelector('.sidebar')
     sidebar.style.display = 'none'
 }
-
