@@ -32,7 +32,9 @@ h1 {
     font-family: cursive;
 }
 
-.controls label, .controls input, .controls select {
+.controls label,
+.controls input,
+.controls select {
     margin-right: 10px;
 }
 
@@ -92,7 +94,7 @@ button {
 
 #undoBtn:hover {
     background-color: #4278b6;
-    box-shadow: 0 0 15px rgb(32, 108, 195,0.5);
+    box-shadow: 0 0 15px rgb(32, 108, 195, 0.5);
     transform: scale(1.1);
 }
 
@@ -177,7 +179,53 @@ button {
 .navbar .login-btn:hover {
     background-color: #e67e22;
     transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Added shadow effect */
+}
+
+/* Back Button Container */
+.back-btn-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 100px;
+    /* Adjust as necessary to position it below the header */
+    left: 50px;
+    /* Adjust as necessary for left positioning */
+    z-index: 1000;
+    /* To make sure it stays on top */
+    cursor: pointer;
+}
+
+/* Back Icon */
+.back-icon {
+    width: 60px;
+    /* Adjust the size of the icon */
+    height: 60px;
+    margin-right: 8px;
+    /* Space between the icon and the text */
+}
+
+/* Back Text */
+.back-text {
+    font-size: 25px;
+    /* Adjust text size */
+    font-weight: bold;
+    color: #5b5c5a;
+    /* Yellow color to match your theme */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.back-btn-container:hover .back-text {
+    color: #000000;
+    /* Change text color on hover */
+    transform: scale(1.01);
+}
+
+.back-btn-container:hover .back-icon {
+    transform: translateX(-5px);
+    /* Slight movement on hover to show interaction */
 }
 
 /* Footer Styles */
