@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Style Generator</title>
+    <link rel="stylesheet" href="type.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Amita:wght@400;700&family=Arizonia&family=Lavishly+Yours&family=Mrs+Saint+Delafield&family=Rouge+Script&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Signature App</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="login-button" onclick="window.location.href='login.html'">Login</button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <h1>Type Your Signature</h1>
+        <input type="text" id="textInput" placeholder="Enter text to style">
+        <button id="generateBtn">Generate</button>
+
+        <div id="fontStylesContainer"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="name">
+            <p><i>Made By</i> <a class="alink" href="https://github.com/anchalchaturvedi08"><i>Anchal Chaturvedi</i></a></p>
+        </div>
+        <p>&copy; 2025 <i>Signature App</i> | All rights reserved.</p>
+        <div class="connect">
+            <p>Connect With Us:</p>
+            <div class="social-icons">
+                <a href="https://twitter.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+                </a>
+                <a href="https://linkedin.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/anchalchaturvedi08" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="type.js"></script>
+</body>
+
+</html>

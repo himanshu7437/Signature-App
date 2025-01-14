@@ -1,0 +1,235 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: url('https://wallpapers.com/images/hd/minimalist-vintage-1920-x-1080-wallpaper-h18al5zfcc6wozfv.jpg') center/cover no-repeat;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding-top: 70px;
+}
+
+/* Button Styling */
+button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #f39c12 ;
+}
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Underline Effect on Hover */
+.nav-links a:hover {
+    color: #ecf0f1;
+    text-decoration: underline;
+}
+
+/* Login Button Styling */
+.navbar .login-btn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.navbar .login-btn:hover {
+    background-color: #e67e22;
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow effect */
+}
+
+/* Main Content */
+.container {
+    margin-top: 120px; /* Adjusted for header space */
+    text-align: center;
+    width: 100%;
+}
+
+.container h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: black;
+}
+
+.container input {
+    font-size: 1.2em;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 500px;
+    border: 2px solid #fff;
+    color: #000000;
+    background-color: transparent;
+}
+
+.container button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+}
+
+.container button:hover {
+    transform: scale(1.05);
+    background-color: #e67e22;
+}
+
+/* Footer Styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.footer .social-icons a img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.footer .social-icons a img:hover {
+    transform: scale(1.2);
+}
+
+.footer .name p {
+    font-size: 14px;
+}
+
+.alink {
+    color: #fff;
+}
+
+.alink:hover {
+    text-decoration: underline;
+}
+
+/* Additional Content Styling */
+.container {
+    margin-top: 50px;
+}
+
+#fontStylesContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three containers per row */
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.fontDesign {
+    padding: 15px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 350px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+
+.fontDesign:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+
+#textInput {
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+}
+
+button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+.downloadBtn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: scale(1.05);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background: #f39c12;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
