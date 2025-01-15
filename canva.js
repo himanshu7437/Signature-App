@@ -1,134 +1,144 @@
-const canvas = document.getElementById("signatureCanvas");
-const ctx = canvas.getContext("2d");
-let painting = false;
-let undoStack = [];
+// Get references to the DOM elements
+const canvas = document.getElementById('signatureCanvas');  // Canvas element for drawing
+const ctx = canvas.getContext('2d');  // 2D context for drawing on the canvas
+const clearBtn = document.getElementById('clearBtn');  // Button to clear the canvas
+const saveBtn = document.getElementById('saveBtn');  // Button to save the canvas content
+const colorOptions = document.querySelectorAll('.color-circle');  // Color picker options
+const fileFormatSelect = document.getElementById('fileFormat');  // Dropdown to select image format
 
-// Start Drawing
-function startPosition(e) {
-    painting = true;
-    draw(e);
+// Set initial drawing color
+let currentColor = '#000000';  // Default color is black
+let drawingPath = [];  // Array to store all drawing paths
+
+// Track mouse events for drawing
+let drawing = false;  // Flag to track if drawing is in progress
+let lastX = 0;  // Last X position of the mouse
+let lastY = 0;  // Last Y position of the mouse
+let lineWidth = 2;  // Line width for drawing (set to 2 for smoothness)
+
+// Set up the canvas for drawing
+function setupCanvas() {
+  canvas.addEventListener('mousedown', startDrawing);  // Start drawing when mouse is pressed
+  canvas.addEventListener('mousemove', draw);  // Track mouse movements to draw
+  canvas.addEventListener('mouseup', stopDrawing);  // Stop drawing when mouse is released
+  canvas.addEventListener('mouseout', stopDrawing);  // Stop drawing when mouse leaves the canvas
+
+  // Set the background to white
+  ctx.fillStyle = '#FFFFFF';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);  // Fill the canvas with a white background
 }
 
-// End Drawing
-function endPosition() {
-    painting = false;
-    ctx.beginPath();
+// Start drawing when mouse is pressed
+function startDrawing(e) {
+  drawing = true;  // Set drawing flag to true
+  drawingPath.push({ color: currentColor, points: [] });  // Start a new path for drawing
+  [lastX, lastY] = [e.offsetX, e.offsetY];  // Set initial drawing coordinates
 }
 
-// Draw on Canvas
+// Stop drawing when mouse is released or moves out of the canvas
+function stopDrawing() {
+  drawing = false;  // Set drawing flag to false
+  ctx.beginPath();  // Begin a new path to prevent connecting to previous paths
+}
+
+// Draw on the canvas with smoother curves
 function draw(e) {
-    if (!painting) return;
-    ctx.lineWidth = document.getElementById("fontSize").value;
-    ctx.lineCap = "round";
-    ctx.strokeStyle = document.getElementById("textColor").value;
+  if (!drawing) return;  // Don't draw if not in drawing mode
 
-    ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
-    ctx.stroke();
+  // Store the points of the current path being drawn
+  drawingPath[drawingPath.length - 1].points.push({ x: e.offsetX, y: e.offsetY });
+
+  // Set the line properties for smoothness
+  ctx.lineWidth = lineWidth;  // Line width
+  ctx.lineJoin = 'round';  // Smooth corners
+  ctx.lineCap = 'round';  // Smooth end points
+  ctx.strokeStyle = currentColor;  // Set the current stroke color
+
+  const currentPoint = { x: e.offsetX, y: e.offsetY };
+
+  // Smooth the drawing using quadratic curves to reduce sharp angles
+  if (drawingPath[drawingPath.length - 1].points.length > 1) {
+    const prevPoint = drawingPath[drawingPath.length - 1].points[drawingPath[drawingPath.length - 1].points.length - 2];
+
+    // Calculate control points for the curve
+    const controlPointX = (prevPoint.x + currentPoint.x) / 2;
+    const controlPointY = (prevPoint.y + currentPoint.y) / 2;
+
+    // Begin a new path and draw a quadratic curve between points
     ctx.beginPath();
-    ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    ctx.moveTo(prevPoint.x, prevPoint.y);
+    ctx.quadraticCurveTo(controlPointX, controlPointY, currentPoint.x, currentPoint.y);  // Smooth curve
+    ctx.stroke();  // Draw the stroke
+  }
+
+  // Update the last mouse position
+  [lastX, lastY] = [e.offsetX, e.offsetY];
 }
 
-// Save canvas state for undo
-const saveState = () => {
-    undoStack.push(canvas.toDataURL());
-};
-
-// Undo the last action
-const undo = () => {
-    if (undoStack.length > 0) {
-        const previousState = undoStack.pop();
-        const img = new Image();
-        img.src = previousState;
-        img.onload = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.drawImage(img, 0, 0);
-        };
-    }
-};
-
-// Clear Canvas
-document.getElementById("clearBtn").addEventListener("click", () => {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    localStorage.removeItem("savedSignature"); // Clear saved signature from localStorage
-});
-
-// Save & Download Canvas in various formats (JPEG, PNG, GIF)
-document.getElementById("saveBtn").addEventListener("click", () => {
-    const signatureData = canvas.toDataURL(); // Get canvas as image data
-    localStorage.setItem("savedSignature", signatureData); // Save signature to localStorage
-
-    const format = document.getElementById('fileFormat').value; // Get selected file format
-    const bgColor = canvas.style.backgroundColor || "#FFFFFF"; // Get the current background color (default to white)
-
-    let mimeType = 'image/png'; // Default format is PNG
-    if (format === 'jpeg') {
-        mimeType = 'image/jpeg';
-    } else if (format === 'gif') {
-        mimeType = 'image/gif';
-    }
-
-    // Backup current canvas state
-    const backupCanvas = document.createElement('canvas');
-    const backupCtx = backupCanvas.getContext('2d');
-    backupCanvas.width = canvas.width;
-    backupCanvas.height = canvas.height;
-
-    // Apply background color for JPEG and GIF formats only
-    if (format === 'jpeg' || format === 'gif') {
-        // Fill the background with the selected background color
-        backupCtx.fillStyle = bgColor;
-        backupCtx.fillRect(0, 0, backupCanvas.width, backupCanvas.height);
-    }
-
-    // Draw the signature on top of the background
-    backupCtx.drawImage(canvas, 0, 0);
-
-    const dataUrl = backupCanvas.toDataURL(mimeType); // Convert backup canvas to the selected image format
-
-    const link = document.createElement("a");
-    link.download = `signature.${format}`; // Set filename based on selected format
-    link.href = dataUrl;
-    link.click();
-});
-
-// Retrieve Saved Signature
-document.getElementById("retrieveBtn").addEventListener("click", () => {
-    const savedSignature = localStorage.getItem("savedSignature");
-    if (savedSignature) {
-        const img = new Image();
-        img.src = savedSignature;
-        img.onload = () => {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear current canvas
-            ctx.drawImage(img, 0, 0); // Draw the saved signature on the canvas
-        };
-    } else {
-        alert("No saved signature found! Draw and save a signature first.");
-    }
-});
-
-// Change canvas background color
-document.getElementById('canvasBgColor').addEventListener('change', (e) => {
-    canvas.style.backgroundColor = e.target.value;
-});
-
-// Mouse events for drawing
-canvas.addEventListener('mousedown', (e) => {
-    saveState(); // Save state before starting a new drawing
-    startPosition(e);
-});
-canvas.addEventListener('mouseup', endPosition);
-canvas.addEventListener('mousemove', draw);
-
-// Undo action
-document.getElementById('undoBtn').addEventListener('click', undo);
-
-//Navbar
-function showsidebar() {
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.display = 'flex'
-}
-function hidesidebar(){
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.display = 'none'
+// Change the drawing color based on selected color
+function selectColor(color) {
+  currentColor = color;  // Update current color
+  updateDrawingColor(color);  // Change the color of all previous drawings
 }
 
+// Update the color of all previous drawings on the canvas
+function updateDrawingColor(color) {
+  drawingPath.forEach(path => {
+    path.color = color;  // Set the new color for each path
+  });
+  redrawCanvas();  // Redraw the canvas with updated colors
+}
+
+// Redraw the entire canvas with updated colors
+function redrawCanvas() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
+  ctx.fillStyle = '#FFFFFF';  // Set the background to white again
+  ctx.fillRect(0, 0, canvas.width, canvas.height);  // Maintain the white background
+
+  drawingPath.forEach(path => {
+    ctx.strokeStyle = path.color;  // Set the stroke color to the color of the current path
+    ctx.lineWidth = lineWidth;  // Set the line width for smoothness
+    ctx.lineJoin = 'round';  // Smooth corners
+    ctx.lineCap = 'round';  // Smooth end points
+    path.points.forEach((point, index) => {
+      if (index === 0) {
+        ctx.beginPath();  // Start a new path for each point
+        ctx.moveTo(point.x, point.y);  // Move to the first point
+      } else {
+        ctx.lineTo(point.x, point.y);  // Draw a line to the current point
+        ctx.stroke();  // Stroke the line
+      }
+    });
+  });
+}
+
+// Clear the canvas when the clear button is clicked
+clearBtn.addEventListener('click', () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the entire canvas
+  ctx.fillStyle = '#FFFFFF';  // Set the background to white
+  ctx.fillRect(0, 0, canvas.width, canvas.height);  // Maintain the white background
+  drawingPath = [];  // Clear the history of the drawing paths
+});
+
+// Save and download the canvas content when the save button is clicked
+saveBtn.addEventListener('click', () => {
+  const format = fileFormatSelect.value;  // Get the selected file format (PNG, JPEG, etc.)
+
+  // Set a white background for GIF and JPEG formats
+  const imageURL = canvas.toDataURL('image/' + format, 1.0);  // Convert canvas to image data URL
+
+  // Create an invisible anchor element for downloading the image
+  const link = document.createElement('a');
+  link.href = imageURL;  // Set the image URL as the download link
+  link.download = 'signature.' + format;  // Set the default file name for the download
+  link.click();  // Trigger the download
+});
+
+// Initialize color selection events for the color options
+colorOptions.forEach(colorCircle => {
+  const color = colorCircle.style.backgroundColor;  // Get the background color of the circle
+  colorCircle.addEventListener('click', () => selectColor(color));  // Set the color on click
+});
+
+// Initialize the canvas setup for drawing
+setupCanvas();
