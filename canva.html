@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature App</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="canva.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+        <!--horizantal -->
+        <div class="menuicon">
+            <ol><li><img src="/logo.svg" alt="Logo" class="logo"></li></ol>
+        
+ <ul class="hnav">
+            <li class="hnavbar"><a href="#home">Home</a></li>
+            <li class="hnavbar"><a href="#">Signature</a></li>
+            <li class="hnavbar"><a href="#features">Features</a></li>
+            <li class="hnavbar"><a href="#contact">Contact</a></li>
+            <li class="hnavbar"><a href="#">signup</a></li>
+            <li><a href="#"><i class="fa-solid fa-bars"   class="menubar" onclick="showsidebar()"></i></a></li>
+        </ul> 
+        </div>
+        
+        <!-- Sidebar-->
+        <ul class="sidebar">
+            
+            <li><a href="#" onclick="hidesidebar()"> 
+                   <i class="fa-solid fa-xmark "></i>
+               </a></li>  
+               <li><a href="#home">Home</a></li>
+               <li><a href="#">Signature</a></li>
+               <li><a href="#features">Features</a></li>
+               <li><a href="#contact">Contact</a></li>
+               <li><a href="#">sign up</a></li> 
+   
+           </ul>
+    </nav>
+  <!--container-->
+
+    <div class="container">
+        <div class="controls">
+            <label for="textColor">Text Color</label>
+            <input type="color" id="textColor" value="#000000">
+            <label for="canvasBgColor">Canvas Background</label>
+            <input type="color" id="canvasBgColor" value="#FFFFFF">
+            <label for="fontSize">Font Size</label>
+            <select id="fontSize">
+                <option value="1px">1px</option>
+                <option value="2px">2px</option>
+                <option value="3px">3px</option>
+                <option value="4px">4px</option>
+                <option value="5px">5px</option>
+            </select>
+        </div>
+        <div class="signature-container">
+            <div class="signature-area">
+                <canvas id="signatureCanvas" width="700" height="400"></canvas>
+            </div>
+            <div class="gif-container">
+                <img src="https://media.tenor.com/yCFHzEvKa9MAAAAi/hello.gif" alt="Animated GIF">
+            </div>
+        </div>
+        <div class="buttons">
+            <button id="clearBtn">Clear</button>
+            <button id="undoBtn">Undo</button>
+            <button id="saveBtn">Save & Download</button>
+            <button id="retrieveBtn">Retrieve Saved Signature</button>
+            
+            <label for="fileFormat">Choose format:</label>
+            <select id="fileFormat">
+                <option value="png">PNG</option>
+                <option value="jpeg">JPEG</option>
+                <option value="gif">GIF</option>
+            </select>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        
+        <div class="name">
+            <p><i>Made By</i> <a class="alink" href="https://github.com/anchalchaturvedi08"><i>Anchal Chaturvedi</i></a></p>
+        </div>
+
+    <p>&copy; 2025 <i>Signature App</i> | All rights reserved.</p>
+    
+    <div class="connect">
+        <p>Connect With Us:</p>
+        <div class="social-icons">
+            <a href="https://twitter.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+            </a>               
+            <a href="https://instagram.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+            </a>
+            <a href="https://linkedin.com" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
+            </a>    
+            <a href="https://github.com/anchalchaturvedi08" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">   
+            </a>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="canva.js"></script>
+</body>
+</html>
