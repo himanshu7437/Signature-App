@@ -52,12 +52,12 @@ body {
 
 .signature-area {
     border: 2px solid #fff;
-    background-color: #fff;
+    background-color:white;
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); /* 3D Effect */
 }
 
 #signatureCanvas {
-    background-color: #fff;
+    background-color: transparent;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow Effect */
 }
 

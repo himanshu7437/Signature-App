@@ -23,9 +23,9 @@ function setupCanvas() {
   canvas.addEventListener('mouseup', stopDrawing);  // Stop drawing when mouse is released
   canvas.addEventListener('mouseout', stopDrawing);  // Stop drawing when mouse leaves the canvas
 
-  // Set the background to white
-  ctx.fillStyle = '#FFFFFF';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);  // Fill the canvas with a white background
+  // Set the background to transparent initially
+  ctx.fillStyle = 'transparent';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);  // Fill the canvas with transparent background
 }
 
 // Start drawing when mouse is pressed
@@ -92,8 +92,14 @@ function updateDrawingColor(color) {
 // Redraw the entire canvas with updated colors
 function redrawCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
-  ctx.fillStyle = '#FFFFFF';  // Set the background to white again
-  ctx.fillRect(0, 0, canvas.width, canvas.height);  // Maintain the white background
+  // Check the selected format and set the background accordingly
+  const format = fileFormatSelect.value;
+  if (format === 'jpeg' || format === 'gif') {
+    ctx.fillStyle = '#FFFFFF';  // Set the background to white for JPEG and GIF
+  } else {
+    ctx.fillStyle = 'transparent';  // Set the background to transparent for others
+  }
+  ctx.fillRect(0, 0, canvas.width, canvas.height);  // Maintain the background
 
   drawingPath.forEach(path => {
     ctx.strokeStyle = path.color;  // Set the stroke color to the color of the current path
@@ -115,8 +121,13 @@ function redrawCanvas() {
 // Clear the canvas when the clear button is clicked
 clearBtn.addEventListener('click', () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the entire canvas
-  ctx.fillStyle = '#FFFFFF';  // Set the background to white
-  ctx.fillRect(0, 0, canvas.width, canvas.height);  // Maintain the white background
+  const format = fileFormatSelect.value;
+  if (format === 'jpeg' || format === 'gif') {
+    ctx.fillStyle = '#FFFFFF';  // Set the background to white for JPEG and GIF
+  } else {
+    ctx.fillStyle = 'transparent';  // Set the background to transparent for others
+  }
+  ctx.fillRect(0, 0, canvas.width, canvas.height);  // Maintain the background
   drawingPath = [];  // Clear the history of the drawing paths
 });
 
@@ -132,6 +143,11 @@ saveBtn.addEventListener('click', () => {
   link.href = imageURL;  // Set the image URL as the download link
   link.download = 'signature.' + format;  // Set the default file name for the download
   link.click();  // Trigger the download
+});
+
+// Detect changes in the file format and adjust background accordingly
+fileFormatSelect.addEventListener('change', () => {
+  redrawCanvas();  // Redraw the canvas with the new background based on selected format
 });
 
 // Initialize color selection events for the color options
