@@ -1,117 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signature App</title>
-    <link rel="shortcut icon" href="/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>QuickSign - Easy Digital Signature Maker</title>
+    <link rel="icon" href="favicon.png" type="image/x-icon">
+
+    <!-- Linking external stylesheets -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
-
-
-    <!-- Navbar -->
-
+    <!-- Navigation Bar -->
     <nav class="navbar">
-        <!--horizantal -->
-        <div class="menuicon">
-            <ol><li><img src="/logo.svg" alt="Logo" class="logo"></li></ol>
-        
- <ul class="hnav">
-            <li class="hnavbar"><a href="#home">Home</a></li>
-            <li class="hnavbar"><a href="#">Signature</a></li>
-            <li class="hnavbar"><a href="#features">Features</a></li>
-            <li class="hnavbar"><a href="#contact">Contact</a></li>
-            <li class="hnavbar"><a href="#">signup</a></li>
-            <li><a href="#"><i class="fa-solid fa-bars"   class="menubar" onclick="showsidebar()"></i></a></li>
-        </ul> 
-        </div>
-        
-        <!-- Sidebar-->
-        <ul class="sidebar">
-            
-            <li><a href="#" onclick="hidesidebar()"> 
-                   <i class="fa-solid fa-xmark "></i>
-               </a></li>  
-               <li><a href="#home">Home</a></li>
-               <li><a href="#">Signature</a></li>
-               <li><a href="#features">Features</a></li>
-               <li><a href="#contact">Contact</a></li>
-               <li><a href="#">sign up</a></li> 
-   
-           </ul>
+        <div class="logo">QuickSign</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
     </nav>
-  <!--container-->
 
-    <div class="container">
-        <div class="controls">
-            <label for="textColor">Text Color</label>
-            <input type="color" id="textColor" value="#000000">
-            <label for="canvasBgColor">Canvas Background</label>
-            <input type="color" id="canvasBgColor" value="#FFFFFF">
-            <label for="fontSize">Font Size</label>
-            <select id="fontSize">
-                <option value="1px">1px</option>
-                <option value="2px">2px</option>
-                <option value="3px">3px</option>
-                <option value="4px">4px</option>
-                <option value="5px">5px</option>
-            </select>
-        </div>
-        <div class="signature-container">
-            <div class="signature-area">
-                <canvas id="signatureCanvas" width="700" height="400"></canvas>
+    <!-- Main Content -->
+
+    <!-- Signature Creation Section -->
+    <section id="signature-creation">
+        <h2>Design Your Electronic Signature</h2>
+        <div class="signature-options">
+            <!-- Option for drawing a signature -->
+            <div class="option">
+                <i class="fa-solid fa-pen-nib" style="font-size: 48px; color: #0077b6;"></i>
+                <h3>Draw Your Signature</h3>
+                <p>Create a signature by drawing it with your touchpad, mouse, phone, or tablet.</p>
+                <button class="option-btn" onclick="window.location.href='canva.html'">Draw Signature</button>
             </div>
-            <div class="gif-container">
-                <img src="https://media.tenor.com/yCFHzEvKa9MAAAAi/hello.gif" alt="Animated GIF">
+            <!-- Option for typing a signature -->
+            <div class="option">
+                <i class="fa-solid fa-keyboard" style="font-size: 48px; color: #0077b6;"></i>
+                <h3>Type Your Signature</h3>
+                <p>Simply type your name and choose from a selection of beautiful handwriting fonts.</p>
+                <button class="option-btn" onclick="window.location.href='type.html'">Type Signature</button>
             </div>
         </div>
-        <div class="buttons">
-            <button id="clearBtn">Clear</button>
-            <button id="undoBtn">Undo</button>
-            <button id="saveBtn">Save & Download</button>
-            <button id="retrieveBtn">Retrieve Saved Signature</button>
-            
-            <label for="fileFormat">Choose format:</label>
-            <select id="fileFormat">
-                <option value="png">PNG</option>
-                <option value="jpeg">JPEG</option>
-                <option value="gif">GIF</option>
-            </select>
-        </div>
-    </div>
+    </section>
 
+    <!-- About Us Section (currently commented out) -->
+    <!-- Uncomment and complete this section if About Us details are needed -->
+    <!--
+    <section id="about">
+        <h2>About QuickSign</h2>
+        <p>QuickSign is a leading provider of digital signature solutions...</p>
+        <div class="about-team">
+            <div class="team-member">
+                <img src="https://via.placeholder.com/150" alt="Founder">
+                <h3>Anchal Chaturvedi</h3>
+                <p>Founder & CEO</p>
+                <p>Passionate about leveraging technology to simplify tasks...</p>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <h2>Our Pricing Plans</h2>
+        <div class="pricing-container">
+            <!-- Basic Plan -->
+            <div class="pricing-card">
+                <h3>Basic Plan</h3>
+                <p class="price">$0</p>
+                <ul>
+                    <li>Unlimited Signature Creations</li>
+                    <li>Access to Standard Fonts</li>
+                    <li>Basic Customization</li>
+                </ul>
+                <button class="option-btn" onclick="window.location.href='signup.html'">Get Started</button>
+            </div>
+            <!-- Premium Plan -->
+            <div class="pricing-card">
+                <h3>Premium Plan</h3>
+                <p class="price">$9.99/month</p>
+                <ul>
+                    <li>Unlimited Signature Creations</li>
+                    <li>Premium Fonts & Styles</li>
+                    <li>Advanced Customization</li>
+                    <li>Priority Support</li>
+                </ul>
+                <button class="option-btn" onclick="window.location.href='signup.html'">Get Started</button>
+            </div>
+            <!-- Business Plan -->
+            <div class="pricing-card">
+                <h3>Business Plan</h3>
+                <p class="price">$29.99/month</p>
+                <ul>
+                    <li>All Features in Premium Plan</li>
+                    <li>Team Management</li>
+                    <li>API Access</li>
+                    <li>Custom Branding</li>
+                </ul>
+                <button class="option-btn" onclick="window.location.href='signup.html'">Get Started</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or need support, feel free to reach out to us. We're here to help!</p>
+        <div class="contact-container">
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h3>QuickSign</h3>
+                <p>Email: <a href="mailto:support@quicksign.com">support@quicksign.com</a></p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: 123 QuickSign St, Tech City, USA</p>
+            </div>
+            <!-- Contact Form -->
+            <form id="contact-form" method="POST">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="option-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
-        
         <div class="name">
             <p><i>Made By</i> <a class="alink" href="https://github.com/anchalchaturvedi08"><i>Anchal Chaturvedi</i></a></p>
         </div>
-
-    <p>&copy; 2025 <i>Signature App</i> | All rights reserved.</p>
-    
-    <div class="connect">
-        <p>Connect With Us:</p>
-        <div class="social-icons">
-            <a href="https://twitter.com" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
-            </a>               
-            <a href="https://instagram.com" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
-            </a>
-            <a href="https://linkedin.com" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
-            </a>    
-            <a href="https://github.com/anchalchaturvedi08" target="_blank">
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">   
-            </a>
+        <p>&copy; 2025 <i>QuickSign</i> | All rights reserved.</p>
+        <div class="connect">
+            <p>Connect With Us:</p>
+            <div class="social-icons">
+                <!-- Social media links -->
+                <a href="https://twitter.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
+                </a>
+                <a href="https://instagram.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Instagram">
+                </a>
+                <a href="https://linkedin.com" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/anchalchaturvedi08" target="_blank">
+                    <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="GitHub">
+                </a>
+            </div>
         </div>
-    </div>
-</footer>
-
-
-    <script src="script.js"></script>
+    </footer>
 </body>
+
 </html>

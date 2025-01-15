@@ -1,0 +1,253 @@
+/* Existing Styles */
+body {
+    background-image: url('https://wallpapers.com/images/hd/minimalist-vintage-1920-x-1080-wallpaper-h18al5zfcc6wozfv.jpg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+.container {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-family: cursive;
+}
+
+.controls label, .controls input, .controls select {
+    margin-right: 10px;
+}
+
+.signature-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signature-area {
+    border: 2px solid #fff;
+    background-color: #fff;
+    margin-right: 20px;
+}
+
+#signatureCanvas {
+    background-color: #fff;
+}
+
+.gif-container img {
+    width: 100px;
+    height: auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    font-family: cursive;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+#clearBtn {
+    background-color: #ff4f4f;
+    color: #fff;
+}
+
+#clearBtn:hover {
+    background-color: #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+#undoBtn {
+    background-color: #4278b6;
+    color: #fff;
+}
+
+#undoBtn:hover {
+    background-color: #4278b6;
+    box-shadow: 0 0 15px rgb(32, 108, 195,0.5);
+    transform: scale(1.1);
+}
+
+#saveBtn {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#saveBtn:hover {
+    background-color: #45a049;
+    box-shadow: 0 0 15px rgba(72, 201, 68, 0.5);
+    transform: scale(1.1);
+}
+
+#retrieveBtn {
+    background-color: #ffa500;
+    color: #fff;
+}
+
+#retrieveBtn:hover {
+    background-color: #ff8c00;
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+    transform: scale(1.1);
+}
+
+/* Navbar Styles */
+.navbar{
+    width: 100%;
+    position: absolute;
+    top:2px;
+}
+/*horizontal nav */
+nav{
+    background-color: white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.1);
+
+}
+ nav ul {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content:right;
+    align-items: center;
+ }
+  nav li{
+    height: 50px;
+
+  }
+  .menuicon,.logo ,nav li a{
+   height: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+  }
+  nav li:hover{
+    background-color: #eecfb0e6;
+  }
+  nav li :first-child{
+    margin-right :auto;
+  }
+  .navbar li a{
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+ .menubar{
+  display: none;
+ }
+
+/*responsive hnav */
+@media (max-width:786px){
+  .hnavbar{
+    display: none;
+  }
+  .menubar{
+    width:100%;
+    background-color: white;
+  }
+}
+  /*side bar */
+  .sidebar{
+    position:fixed;
+    top:0px;
+    left: 0;
+    height: 100%;
+    width: 350px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(1px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    color:white; 
+  }
+  .sidebar li{
+    width: 350px;
+  }
+  .sidebar a{
+    width:100% ;
+    text-decoration: none;
+  }
+  /*logo img */
+  nav ol li{
+    list-style: none;
+  }
+
+/* Footer Styles */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.8);
+    /* padding: 20px; */
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+}
+
+.footer .connect {
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+
+.footer .connect p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer .social-icons a img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer .social-icons a img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.name {
+    margin-left: 50px;
+}
+
+.alink {
+    color: #fff;
+}
