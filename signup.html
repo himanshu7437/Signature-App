@@ -1,46 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Signature App</title>
+    <title>QuickSign - Easy Digital Signature Maker</title>
+    <!-- Favicon for the Browser Tab -->
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <!-- Link to the external stylesheet for sign-up page -->
     <link rel="stylesheet" href="login.css">
+    <!-- Google Fonts for Poppins font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 </head>
+
 <body>
-    <!-- Navbar -->
+    <!-- Navbar Section -->
     <nav class="navbar">
-        <div class="logo">
-            <img src="/logo.svg" alt="Logo">
-        </div>
+        <div class="logo">QuickSign</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <!-- Login button that redirects to the login page -->
+        <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
     </nav>
 
+    <!-- Main Container for the Sign-Up Page -->
     <div class="container">
         <h1 class="signup-heading">Sign Up</h1>
         <div class="auth-container">
             <div class="form-container signup-form">
+                <!-- Sign-Up Form -->
                 <form>
                     <label for="signupName">Full Name</label>
                     <input type="text" id="signupName" placeholder="Enter your full name" required>
+                    
                     <label for="signupEmail">Email</label>
                     <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                    
                     <label for="signupPassword">Password</label>
                     <input type="password" id="signupPassword" placeholder="Create a password" required>
+                    
+                    <!-- Submit button for the sign-up form -->
                     <button type="submit" class="auth-btn">Sign Up</button>
                 </form>
-                <p>Already have an account? <a href="login.html">Login</a></p>
+                
+                <!-- Link for users to navigate to the login page if they already have an account -->
+                <p class="form-p">Already have an account? <a class="form-a" href="login.html">Login</a></p>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="footer">
         <div class="name">
             <p><i>Made By</i> <a class="alink" href="https://github.com/anchalchaturvedi08"><i>Anchal Chaturvedi</i></a></p>
         </div>
-        <p>&copy; 2025 <i>Signature App</i> | All rights reserved.</p>
+        <p>&copy; 2025 <i>QuickSign</i> | All rights reserved.</p>
+        
+        <!-- Social Media Links Section -->
         <div class="connect">
             <p>Connect With Us:</p>
             <div class="social-icons">
+                <!-- Social media icons for connecting -->
                 <a href="https://twitter.com" target="_blank">
                     <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Twitter">
                 </a>
@@ -56,7 +80,6 @@
             </div>
         </div>
     </footer>
-
-    <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,132 +1,139 @@
-/* General Reset */
+/* General Reset for Consistent Layout */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* Body Styling */
 body {
-    background-image: url('https://wallpapers.com/images/hd/minimalist-vintage-1920-x-1080-wallpaper-h18al5zfcc6wozfv.jpg');
-    background-size: cover;
+    background-color: #f8f9fa; /* Light background color */
+    background-size: cover; /* Cover the entire screen */
     background-position: center;
-    font-family: 'Roboto', sans-serif;
-    color: #fff;
+    color: #fff; /* Text color */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    text-align: center;
+    height: 100vh; /* Full height */
+    text-align: center; /* Center the text */
 }
 
 /* Container for Form */
 .container {
-    background: rgba(0, 0, 0, 0.6);
+    background: #ffffff; /* White background for the form */
     padding: 40px;
     border-radius: 8px;
     text-align: center;
     width: 100%;
-    max-width: 380px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-width: 380px; /* Maximum width for the form */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
 }
 
-/* Login Heading */
-.login-heading {
-    font-size: 36px;
-    font-weight: 700;
-    color: #fff; 
-    margin-bottom: 20px;
-    text-transform: none; 
-    letter-spacing: 1px;
-}
-
-/* Sign Up Heading */
+/* Heading Styles for Login/Sign Up */
+.login-heading,
 .signup-heading {
     font-size: 36px;
     font-weight: 700;
-    color: #fff; 
+    color: #00b8d4; /* Teal color for heading */
     margin-bottom: 20px;
-    text-transform: none; 
+    text-transform: none;
     letter-spacing: 1px;
 }
 
-/* Input Fields and Labels */
+/* Label Styling for Form Fields */
 label {
     display: block;
     text-align: left;
     font-weight: 500;
     margin-bottom: 5px;
     font-size: 14px;
-    color: #fff;
-    margin-left: 20px;
+    color: #000000; /* Black color for labels */
+    margin-left: 10px;
 }
 
+/* Input Field Styling */
 input {
     width: 100%;
     padding: 12px;
-    border: 2px solid #fff;
+    border: 2px solid #e0e0e0;
     border-radius: 5px;
     margin-bottom: 20px;
     outline: none;
     font-size: 14px;
-    background: rgba(255, 255, 255, 0.3);
+    background: #fafafa; /* Light grey background */
     color: #fff;
     transition: border-color 0.3s ease-in-out;
 }
 
+/* Input Focus Effect */
 input:focus {
-    border-color: #f7ca00;
+    border-color: #00b8d4; /* Teal border on focus */
 }
 
-/* Button Styling */
+/* Paragraph for Form Links */
+.form-p {
+    color: #000000;
+    font-size: 14px;
+}
+
+/* Link Styling for Sign Up / Login Links */
+.form-a {
+    color: #000000;
+    font-size: 14px;
+}
+
+/* Button Styling for Form Submit */
 button {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-    font-weight: bold;
+    padding: 12px 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease-in-out;
+    font-size: 16px;
+    background-color: #00b8d4; /* Teal background */
+    color: white;
+    transition: all 0.3s ease;
 }
 
-button:focus {
-    outline: none;
+/* Button Hover Effect */
+button:hover {
+    background-color: #008c91; /* Darker teal on hover */
 }
 
+/* Auth Button Styling */
 .auth-btn {
-    background-color: #f7ca00;
-    color: #fff;
+    width: 100%;
+    padding: 14px;
+    background: #00b8d4; /* Teal background */
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
+/* Hover Effect for Auth Button */
 .auth-btn:hover {
-    background-color: #ffb400;
-    transform: scale(1.05);
+    background: #008c91;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05); /* Slight scale effect on hover */
 }
 
-/* Link Styling */
+/* Link Styles for Paragraphs and Anchors */
 p {
     margin-top: 15px;
-    color: #fff;
+    color: #ffffff;
 }
 
 a {
-    color: #f7ca00;
+    color: #ffffff;
     text-decoration: none;
 }
 
 a:hover {
-    text-decoration: underline;
-}
-
-/* Footer Styling */
-footer {
-    font-size: 12px;
-    color: #fff;
-    margin-top: 20px;
-    text-align: center;
+    text-decoration: underline; /* Underline effect on hover */
 }
 
 /* Navbar Styling */
@@ -134,30 +141,58 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 10px 20px;
-    background: rgba(0, 0, 0, 0);
+    padding: 30px;
+    background: linear-gradient(45deg, #00b8d4, #0077b6);
     position: fixed;
+    width: 100vw;
     top: 0;
-    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.navbar .logo img {
-    max-width: 100px;
+/* Logo Styling */
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 45px;
+    cursor: pointer;
 }
 
-/* Footer Styles */
+.logo img {
+    height: 50px;
+}
+
+/* Navigation Links Styling */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    margin: 0 15px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* Hover Effect on Navigation Links */
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styling */
 .footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(0, 0, 0, 0.8);
+    background: linear-gradient(45deg, #00b8d4, #0077b6);
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
     color: #fff;
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .footer .connect {
@@ -185,7 +220,7 @@ footer {
 
 .footer .social-icons a img:hover {
     transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Hover effect on icons */
 }
 
 .name {
@@ -197,7 +232,7 @@ footer {
 }
 
 .alink {
-    color: #fff;
+    color: #fffefe;
 }
 
 .alink:hover {
