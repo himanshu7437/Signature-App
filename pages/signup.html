@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QuickSign - Easy Digital Signature Maker</title>
     <!-- Favicon for the Browser Tab -->
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <!-- Link to the external stylesheet for login page -->
-    <link rel="stylesheet" href="login.css">
+    <link rel="shortcut icon" href="../assets/favicon/favicon.png" type="image/x-icon">
+    <!-- Link to the external stylesheet for sign-up page -->
+    <link rel="stylesheet" href="../assets/css/login.css">
     <!-- Google Fonts for Poppins font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap">
 </head>
@@ -18,7 +18,7 @@
     <nav class="navbar">
         <div class="logo">QuickSign</div>
         <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="../index.html">Home</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#about">About Us</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -27,25 +27,28 @@
         <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
     </nav>
 
-    <!-- Main Container for the Login Page -->
+    <!-- Main Container for the Sign-Up Page -->
     <div class="container">
-        <h1 class="login-heading">Login</h1>
+        <h1 class="signup-heading">Sign Up</h1>
         <div class="auth-container">
-            <div class="form-container login-form">
-                <!-- Login Form -->
+            <div class="form-container signup-form">
+                <!-- Sign-Up Form -->
                 <form>
-                    <label for="loginEmail">Email</label>
-                    <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Enter your full name" required>
                     
-                    <label for="loginPassword">Password</label>
-                    <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="Enter your email" required>
                     
-                    <!-- Submit button for the login form -->
-                    <button type="submit" class="auth-btn">Login</button>
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password" required>
+                    
+                    <!-- Submit button for the sign-up form -->
+                    <button type="submit" class="auth-btn">Sign Up</button>
                 </form>
                 
-                <!-- Link for users to navigate to the sign-up page if they don't have an account -->
-                <p class="form-p">Don't have an account? <a class="form-a" href="signup.html">Sign up</a></p>
+                <!-- Link for users to navigate to the login page if they already have an account -->
+                <p class="form-p">Already have an account? <a class="form-a" href="login.html">Login</a></p>
             </div>
         </div>
     </div>
