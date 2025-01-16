@@ -1,69 +1,76 @@
-/* Existing Styles */
-body {
-    background-image: url('https://wallpapers.com/images/hd/minimalist-vintage-1920-x-1080-wallpaper-h18al5zfcc6wozfv.jpg');
-    background-size: cover;
-    background-position: center;
-    font-family: Arial, sans-serif;
+/* ===========================
+   General Reset and Styling
+============================= */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #fff;
+    text-align: center;
 }
 
+/* ===========================
+   Main Container Styling
+============================= */
 .container {
-    background: rgba(0, 0, 0, 0.7);
+    background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    margin-top: 80px;
+    margin-top: 100px;
+    margin-bottom: 80px;
 }
 
-.controls {
-    display: flex;
-    justify-content: space-around;
+.signature-instruction h2 {
+    font-size: 35px;
+    font-weight: bold;
+    color: #00b8d4;
     margin-bottom: 20px;
 }
 
-h1 {
-    font-family: cursive;
-}
-
-.controls label, .controls input, .controls select {
-    margin-right: 10px;
-}
-
+/* ===========================
+   Signature Canvas Styling
+============================= */
 .signature-container {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .signature-area {
     border: 2px solid #fff;
-    background-color: #fff;
-    margin-right: 20px;
+    background-color:white;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3); /* 3D Effect */
 }
 
 #signatureCanvas {
-    background-color: #fff;
+    background-color: transparent;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow Effect */
 }
 
-.gif-container img {
-    width: 100px;
-    height: auto;
-}
-
+/* ===========================
+   Button Styling
+============================= */
 .buttons {
     display: flex;
     justify-content: space-around;
+    gap: 10px;
     margin-top: 20px;
 }
 
-/* Button Styles */
 button {
     padding: 10px 20px;
     font-family: cursive;
@@ -72,171 +79,161 @@ button {
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s ease-in-out;
+    background-color: #333;
+    color: #fff;
 }
 
+/* Clear Button Styling */
 #clearBtn {
-    background-color: #ff4f4f;
-    color: #fff;
+    background-color: #00b8d4;
 }
 
 #clearBtn:hover {
-    background-color: #ff0000;
-    box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+    background-color: #008c91;
     transform: scale(1.1);
 }
 
-#undoBtn {
-    background-color: #4278b6;
-    color: #fff;
-}
-
-#undoBtn:hover {
-    background-color: #4278b6;
-    box-shadow: 0 0 15px rgb(32, 108, 195,0.5);
-    transform: scale(1.1);
-}
-
+/* Save Button Styling */
 #saveBtn {
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #00b8d4;
 }
 
 #saveBtn:hover {
-    background-color: #45a049;
-    box-shadow: 0 0 15px rgba(72, 201, 68, 0.5);
+    background-color: #008c91;
     transform: scale(1.1);
 }
 
-#retrieveBtn {
-    background-color: #ffa500;
-    color: #fff;
+/* ===========================
+   Color Picker Styling
+============================= */
+.drawing-color-label,
+.file-format {
+    color: #00b8d4;
+    padding: 10px 20px;
+    font-family: cursive;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
 }
 
-#retrieveBtn:hover {
-    background-color: #ff8c00;
-    box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
-    transform: scale(1.1);
-}
-
-/* Navbar Styles */
-.navbar{
-    width: 100%;
-    position: absolute;
-    top:2px;
-}
-/*horizontal nav */
-nav{
-    background-color: white;
-    box-shadow: 3px 3px 3px rgba(0,0,0,0.1);
-
-}
- nav ul {
-    width: 100%;
-    list-style: none;
+.color-picker-container {
     display: flex;
-    justify-content:right;
-    align-items: center;
- }
-  nav li{
-    height: 50px;
-
-  }
-  .menuicon,.logo ,nav li a{
-   height: 100%;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    color: black;
-  }
-  nav li:hover{
-    background-color: #eecfb0e6;
-  }
-  nav li :first-child{
-    margin-right :auto;
-  }
-  .navbar li a{
-    padding-left: 20px;
-    padding-right: 20px;
-    text-align: center;
-  }
- .menubar{
-  display: none;
- }
-
-/*responsive hnav */
-@media (max-width:786px){
-  .hnavbar{
-    display: none;
-  }
-  .menubar{
-    width:100%;
-    background-color: white;
-  }
-}
-  /*side bar */
-  .sidebar{
-    position:fixed;
-    top:0px;
-    left: 0;
-    height: 100%;
-    width: 350px;
-    z-index: 999;
-    background-color: rgba(255, 255, 255, 0.97);
-    backdrop-filter: blur(1px);
-    box-shadow: -10px 0 10px rgba(0,0,0,0.1);
-    display: none;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: flex-start;
-    color:white; 
-  }
-  .sidebar li{
-    width: 350px;
-  }
-  .sidebar a{
-    width:100% ;
-    text-decoration: none;
-  }
-  /*logo img */
-  nav ol li{
-    list-style: none;
-  }
+}
 
-/* Footer Styles */
+.color-options {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.color-circle {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.2);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ===========================
+   Navbar Styling
+============================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    background: linear-gradient(45deg, #00b8d4, #0077b6);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 45px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Navbar Button */
+.login-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    background-color: #00b8d4;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+    background-color: #008c91;
+}
+
+/* ===========================
+   Footer Styling
+============================= */
 .footer {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    background: rgba(0, 0, 0, 0.8);
-    /* padding: 20px; */
-    text-align: center;
+    align-items: center;
+    background: linear-gradient(45deg, #00b8d4, #0077b6);
+    padding: 10px 50px;
     position: fixed;
     bottom: 0;
     width: 100%;
     color: #fff;
+    font-size: 14px;
 }
 
 .footer .connect {
-    margin-bottom: 10px;
-    margin-right: 50px;
+    text-align: right;
 }
 
 .footer .connect p {
     font-size: 16px;
     font-weight: bold;
-    margin-bottom: 10px;
 }
 
 .footer .social-icons {
     display: flex;
-    justify-content: center;
     gap: 15px;
 }
 
 .footer .social-icons a img {
     width: 20px;
     height: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .footer .social-icons a img:hover {
@@ -244,10 +241,15 @@ nav{
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-.name {
-    margin-left: 50px;
+/* Footer Credits */
+.name p {
+    font-size: 14px;
 }
 
 .alink {
     color: #fff;
+}
+
+.alink:hover {
+    text-decoration: underline;
 }

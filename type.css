@@ -3,47 +3,57 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-/* Body Styling */
 body {
-    background: url('https://wallpapers.com/images/hd/minimalist-vintage-1920-x-1080-wallpaper-h18al5zfcc6wozfv.jpg') center/cover no-repeat;
+    background-color: #f8f9fa;
+    background-size: cover;
+    background-position: center;
     color: #fff;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     height: 100vh;
     text-align: center;
-    padding-top: 70px;
 }
 
 /* Button Styling */
 button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 16px;
+    background-color: #00b8d4;
+    color: white;
+    transition: all 0.3s ease;
 }
 
 button:hover {
-    transform: scale(1.05);
-    background-color: #f39c12 ;
+    background-color: #008c91;
 }
+
 /* Navbar Styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 50px;
-    background: rgba(0, 0, 0, 0.8);
+    padding: 30px;
+    background: linear-gradient(45deg, #00b8d4, #0077b6);
     position: fixed;
-    width: 100%;
+    width: 100vw;
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    margin-left: 45px;
+    cursor: pointer;
 }
 
 .logo img {
@@ -59,47 +69,43 @@ button:hover {
 
 .nav-links a {
     color: white;
-    font-size: 18px;
-    font-weight: bold;
+    margin: 0 15px;
+    font-size: 16px;
     text-decoration: none;
-    transition: color 0.3s ease, text-decoration 0.3s ease;
 }
 
 /* Underline Effect on Hover */
 .nav-links a:hover {
-    color: #ecf0f1;
     text-decoration: underline;
 }
 
-/* Login Button Styling */
-.navbar .login-btn {
-    background-color: #f39c12;
-    color: white;
+.login-btn {
+    padding: 12px 30px;
     border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font-size: 16px;
+    background-color: #00b8d4;
+    color: white;
+    transition: all 0.3s ease;
 }
 
-.navbar .login-btn:hover {
-    background-color: #e67e22;
-    transform: scale(1.1);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Added shadow effect */
+.login-btn:hover {
+    background-color: #008c91;
 }
 
 /* Main Content */
 .container {
-    margin-top: 120px; /* Adjusted for header space */
+    margin-top: 300px; /* Adjusted for header space */
     text-align: center;
     width: 100%;
+    background-color: #f8f9fa;
 }
 
 .container h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    color: black;
+    color: #00b8d4;
 }
 
 .container input {
@@ -109,9 +115,15 @@ button:hover {
     border-radius: 5px;
     width: 80%;
     max-width: 500px;
-    border: 2px solid #fff;
-    color: #000000;
-    background-color: transparent;
+    border: 2px solid #ccc;
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+.container input:focus {
+    border-color: #00b8d4;
+    outline: none;
+    background-color: #ffffff;
 }
 
 .container button {
@@ -120,68 +132,91 @@ button:hover {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    background-color: #f39c12;
+    background-color: #00b8d4;
     color: white;
     border: none;
 }
 
 .container button:hover {
     transform: scale(1.05);
-    background-color: #e67e22;
+    background-color: #008c91;
 }
 
-/* Footer Styling */
+/* Footer Styles */
 .footer {
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    background: rgba(0, 0, 0, 0.9);
-    position: fixed;
+    background: linear-gradient(45deg, #00b8d4, #0077b6);
+    text-align: center;
     bottom: 0;
     width: 100%;
     color: #fff;
     font-size: 14px;
-    padding: 10px 20px;
+}
+
+.footer .connect {
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+
+.footer .connect p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
 .footer .social-icons a img {
     width: 20px;
     height: 20px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .footer .social-icons a img:hover {
     transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-.footer .name p {
+.name {
+    margin-left: 50px;
+}
+
+.name p {
     font-size: 14px;
 }
 
 .alink {
-    color: #fff;
+    color: #fffefe;
 }
 
 .alink:hover {
     text-decoration: underline;
 }
 
-/* Additional Content Styling */
-.container {
-    margin-top: 50px;
+.footer p {
+    font-size: 14px;
 }
 
+/* Additional Content Styling */
 #fontStylesContainer {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Three containers per row */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     justify-items: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .fontDesign {
     padding: 15px;
     border: 1px solid #ccc;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     width: 350px;
     height: 150px;
     display: flex;
@@ -196,40 +231,9 @@ button:hover {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-
 #textInput {
     padding: 10px;
     margin-bottom: 20px;
     font-size: 16px;
     width: 300px;
 }
-
-button {
-    padding: 10px 20px;
-    background-color: #f39c12;
-    color: white;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-
-}
-
-button:hover {
-    background-color: #e67e22;
-    transform: scale(1.05);
-}
-
-.downloadBtn {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: scale(1.05);
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background: #f39c12;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
