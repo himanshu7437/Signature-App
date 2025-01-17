@@ -33,6 +33,47 @@ body {
     margin-bottom: 80px;
 }
 
+/* ===========================
+   Back button
+============================= */
+
+/* Back Button Container */
+.back-btn-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 130px;  /* Adjust as necessary to position it below the header */
+    left: 60px;  /* Adjust as necessary for left positioning */
+    z-index: 1000;  /* To make sure it stays on top */
+    cursor: pointer;
+}
+
+/* Back Icon */
+.back-icon {
+    width: 40px;  /* Adjust the size of the icon */
+    height: 40px;
+    margin-right: 8px;  /* Space between the icon and the text */
+}
+
+/* Back Text */
+.back-text {
+    font-size: 30px;  /* Adjust text size */
+    font-weight: bold;
+    color: #00b8d4;  /* Yellow color to match your theme */
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.back-btn-container:hover .back-text {
+    color: #008c91;  /* Change text color on hover */
+    transform: scale(1.01);
+}
+
+.back-btn-container:hover .back-icon {
+    transform: translateX(-5px);  /* Slight movement on hover to show interaction */
+}
+
+
 .signature-instruction h2 {
     font-size: 35px;
     font-weight: bold;
