@@ -14,7 +14,9 @@ body {
     background: #f8f9fa;
     line-height: 1.6;
     text-align: center;
-    margin-top: 100px; /* Prevents content from overlapping fixed navbar */
+    margin: 0; /* Remove margin to allow full use of viewport */
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 100vh; /* Set height to viewport height */
 }
 
 h1, h2, h3 {
@@ -345,7 +347,40 @@ form button:hover {
 .footer .social-icons a img:hover {
     transform: scale(1.2);
 }
-
 .footer p {
     font-size: 14px;
 }
+
+.brush-options {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f0f0f0; /* Light background for contrast */
+    border-radius: 5px;
+}
+
+.brush-options label {
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.brush-options select {
+    margin-right: 20px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#eraserBtn {
+    background-color: #ff4d4d; /* Red color for the eraser */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin: 10px; /* Margin for spacing */
+}
+
+#eraserBtn:hover {
+    background-color: #e60000; /* Darker red on hover */
+}
+

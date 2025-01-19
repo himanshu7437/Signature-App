@@ -29,8 +29,9 @@ body {
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    margin-top: 100px;
-    margin-bottom: 80px;
+    margin: 20px;
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
 }
 
 /* ===========================
@@ -99,7 +100,7 @@ body {
 
 #signatureCanvas {
     background-color: transparent;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Shadow Effect */
+    border: 2px solid #000;
 }
 
 /* ===========================
@@ -108,20 +109,21 @@ body {
 .buttons {
     display: flex;
     justify-content: space-around;
-    gap: 10px;
     margin-top: 20px;
+    align-items: center; /* Align items vertically */
 }
 
 button {
     padding: 10px 20px;
-    font-family: cursive;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease-in-out;
-    background-color: #333;
-    color: #fff;
+    background-color: #0077b6;
+    color: white;
+}
+
+button:hover {
+    background-color: #005f8a;
 }
 
 /* Clear Button Styling */
@@ -142,6 +144,21 @@ button {
 #saveBtn:hover {
     background-color: #008c91;
     transform: scale(1.1);
+}
+
+/* Eraser Button Styling */
+#eraserBtn {
+    background-color: #ff4d4d; /* Red color for the eraser */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    margin: 10px; /* Margin for spacing */
+}
+
+#eraserBtn:hover {
+    background-color: #e60000; /* Darker red on hover */
 }
 
 /* ===========================
@@ -293,4 +310,39 @@ button {
 
 .alink:hover {
     text-decoration: underline;
+}
+
+/* ===========================
+   Button Styling
+============================= */
+.buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    align-items: center; /* Align items vertically */
+}
+
+.brush-size-label {
+    color: #00b8d4; /* Color for the label */
+    margin-right: 10px; /* Space between label and input */
+}
+
+input[type="range"] {
+    -webkit-appearance: none; /* Remove default styling */
+    width: 100px; /* Width of the range input */
+    height: 5px; /* Height of the range input */
+    background: #ddd; /* Background color */
+    border-radius: 5px; /* Rounded corners */
+    outline: none; /* Remove outline */
+    margin: 0 10px; /* Margin for spacing */
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Remove default styling */
+    appearance: none; /* Remove default styling */
+    width: 15px; /* Width of the thumb */
+    height: 15px; /* Height of the thumb */
+    background: #00b8d4; /* Color of the thumb */
+    border-radius: 50%; /* Rounded thumb */
+    cursor: pointer; /* Pointer cursor on hover */
 }
