@@ -74,6 +74,15 @@ eraserBtn.addEventListener('click', () => {
     }
 });
 
+// Save the canvas content as an image
+saveBtn.addEventListener('click', () => {
+    const dataURL = canvas.toDataURL('image/png'); // Convert canvas to data URL
+    const link = document.createElement('a'); // Create an anchor element
+    link.href = dataURL; // Set the data URL as the href
+    link.download = 'signature.png'; // Set the download filename
+    link.click(); // Trigger the download
+});
+
 // Clear the canvas
 clearBtn.addEventListener('click', () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
