@@ -68,8 +68,18 @@ button:hover {
     color: white;
 }
 
-.logo img {
-    height: 50px;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.logo-img {
+    width: auto;
+    height: 23px;
+    transform: scale(1.5);
+    margin-right: -32px;
+    margin-bottom: 8px;
 }
 
 /* Navigation Links Styling */
@@ -383,4 +393,3 @@ form button:hover {
 #eraserBtn:hover {
     background-color: #e60000; /* Darker red on hover */
 }
-
