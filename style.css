@@ -1,395 +1,402 @@
-/* -------------------- General Reset -------------------- */
-/* Resets default margin, padding, and applies a common box model */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+    /* -------------------- General Reset -------------------- */
+    /* Resets default margin, padding, and applies a common box model */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
 
-/* -------------------- Body Styling -------------------- */
-/* Styling for the main content and body for better readability and spacing */
-body {
-    color: #212529;
-    background: #f8f9fa;
-    line-height: 1.6;
-    text-align: center;
-    margin: 0; /* Remove margin to allow full use of viewport */
-    overflow-y: auto; /* Enable vertical scrolling */
-    height: 100vh; /* Set height to viewport height */
-}
+    /* -------------------- Body Styling -------------------- */
+    /* Styling for the main content and body for better readability and spacing */
+    body {
+        color: #212529;
+        background: #f8f9fa;
+        line-height: 1.6;
+        text-align: center;
+        margin: 0; /* Remove margin to allow full use of viewport */
+        overflow-y: auto; /* Enable vertical scrolling */
+        height: 100vh; /* Set height to viewport height */
+    }
 
-h1, h2, h3 {
-    margin-bottom: 10px;
-}
+    h1, h2, h3 {
+        margin-bottom: 10px;
+    }
 
-a {
-    text-decoration: none;
-    color: #ffffff;
-}
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
 
-button {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 16px;
-    background-color: #00b8d4;
-    color: white;
-    transition: all 0.3s ease;
-}
+    button {
+        padding: 12px 30px;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: #00b8d4;
+        color: white;
+        transition: all 0.3s ease;
+    }
 
-button:hover {
-    background-color: #008c91;
-}
+    button:hover {
+        background-color: #008c91;
+    }
 
-/* -------------------- Navbar Styling -------------------- */
-/* Fixed navbar with gradient background and flexbox layout */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px;
-    background: linear-gradient(45deg, #00b8d4, #0077b6);
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Logo Styling */
-.logo {
-    font-size: 26px;
-    font-weight: bold;
-    margin-left: 45px;
-    cursor: pointer;
-    color: white;
-}
-
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 0;
-}
-
-.logo-img {
-    width: auto;
-    height: 23px;
-    transform: scale(1.5);
-    margin-right: -32px;
-    margin-bottom: 8px;
-}
-
-/* Navigation Links Styling */
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 25px;
-}
-
-.nav-links a {
-    color: white;
-    margin: 0 15px;
-    font-size: 16px;
-    text-decoration: none;
-}
-
-/* Underline effect for hover interaction */
-.nav-links a:hover {
-    text-decoration: underline;
-}
-
-/* Login Button Styling */
-.login-btn {
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    background-color: #00b8d4;
-    color: white;
-    transition: all 0.3s ease;
-}
-
-.login-btn:hover {
-    background-color: #008c91;
-}
-
-/* -------------------- Hero Section -------------------- */
-#signature-creation {
-    padding: 60px 20px;
-    background: #f0f9ff;
-    border-bottom: 2px solid #d1e7fd;
-    text-align: center;
-}
-
-#signature-creation h2 {
-    font-size: 32px;
-    color: #0077b6;
-    margin-bottom: 25px;
-}
-
-/* -------------------- Signature Options Section -------------------- */
-.signature-options {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    padding: 20px;
-    margin: 50px auto;
-    max-width: 1200px;
-}
-
-/* Individual Signature Option Styling */
-.option {
-    background: white;
-    color: #212529;
-    border-radius: 12px;
-    padding: 30px;
-    width: 280px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    text-align: center;
-    flex: 1 1 calc(33.333% - 40px);
-    box-sizing: border-box;
-    min-width: 280px;
-    margin: 20px 0;
-}
-
-.option-btn {
-    margin-top: 10px;
-}
-
-.option:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
-}
-
-/* Icon Styling */
-.option i {
-    font-size: 48px;
-    color: #0077b6;
-    margin-bottom: 15px;
-}
-
-/* -------------------- Media Queries -------------------- */
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .signature-options {
-        flex-direction: column;
+    /* -------------------- Navbar Styling -------------------- */
+    /* Fixed navbar with gradient background and flexbox layout */
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
+        padding: 30px;
+        background: linear-gradient(45deg, #00b8d4, #0077b6);
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
+    /* Logo Styling */
+    .logo {
+        font-size: 26px;
+        font-weight: bold;
+        margin-left: 45px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 0;
+    }
+
+    .logo-img {
+        width: auto;
+        height: 23px;
+        transform: scale(1.5);
+        margin-right: -32px;
+        margin-bottom: 9px;
+        cursor: pointer
+    }
+
+    .logo-img:hover {
+        transform: scale(1.7);
+        transition: 0.5s ease;
+    }
+
+    /* Navigation Links Styling */
+    .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 25px;
+    }
+
+    .nav-links a {
+        color: white;
+        margin: 0 15px;
+        font-size: 16px;
+        text-decoration: none;
+    }
+
+    /* Underline effect for hover interaction */
+    .nav-links a:hover {
+        text-decoration: underline;
+    }
+
+    /* Login Button Styling */
+    .login-btn {
+        padding: 12px 30px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        background-color: #00b8d4;
+        color: white;
+        transition: all 0.3s ease;
+    }
+
+    .login-btn:hover {
+        background-color: #008c91;
+    }
+
+    /* -------------------- Hero Section -------------------- */
+    #signature-creation {
+        padding: 60px 20px;
+        background: #f0f9ff;
+        border-bottom: 2px solid #d1e7fd;
+        text-align: center;
+    }
+
+    #signature-creation h2 {
+        font-size: 32px;
+        color: #0077b6;
+        margin-bottom: 25px;
+    }
+
+    /* -------------------- Signature Options Section -------------------- */
+    .signature-options {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        padding: 20px;
+        margin: 50px auto;
+        max-width: 1200px;
+    }
+
+    /* Individual Signature Option Styling */
     .option {
-        width: 90%;
+        background: white;
+        color: #212529;
+        border-radius: 12px;
+        padding: 30px;
+        width: 280px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        text-align: center;
+        flex: 1 1 calc(33.333% - 40px);
+        box-sizing: border-box;
+        min-width: 280px;
+        margin: 20px 0;
     }
-}
 
-/* -------------------- Pricing Section -------------------- */
-#pricing {
-    background-color: #f9f9f9;
-    padding: 40px 0;
-    text-align: center;
-}
+    .option-btn {
+        margin-top: 10px;
+    }
 
-#pricing h2 {
-    font-size: 36px;
-    color: #0077b6;
-    margin-bottom: 20px;
-}
+    .option:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    }
 
-/* Pricing Cards Layout */
-.pricing-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
+    /* Icon Styling */
+    .option i {
+        font-size: 48px;
+        color: #0077b6;
+        margin-bottom: 15px;
+    }
 
-.pricing-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 20px;
-    width: 250px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
+    /* -------------------- Media Queries -------------------- */
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 768px) {
+        .signature-options {
+            flex-direction: column;
+            align-items: center;
+        }
 
-.pricing-card h3 {
-    font-size: 28px;
-    margin-bottom: 10px;
-}
+        .option {
+            width: 90%;
+        }
+    }
 
-.price {
-    font-size: 24px;
-    color: #0077b6;
-    margin-bottom: 20px;
-}
+    /* -------------------- Pricing Section -------------------- */
+    #pricing {
+        background-color: #f9f9f9;
+        padding: 40px 0;
+        text-align: center;
+    }
 
-.pricing-card ul {
-    list-style-type: none;
-    padding: 0;
-    margin-bottom: 20px;
-}
+    #pricing h2 {
+        font-size: 36px;
+        color: #0077b6;
+        margin-bottom: 20px;
+    }
 
-.pricing-card button {
-    background-color: #0077b6;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
+    /* Pricing Cards Layout */
+    .pricing-container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
 
-.pricing-card button:hover {
-    background-color: #005f8c;
-}
+    .pricing-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        width: 250px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
 
-/* -------------------- About Section -------------------- */
-#about {
-    padding: 40px 20px;
-    background-color: #f0f0f0;
-    text-align: center;
-}
+    .pricing-card h3 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
 
-#about h2 {
-    font-size: 36px;
-    color: #0077b6;
-    margin-bottom: 20px;
-}
+    .price {
+        font-size: 24px;
+        color: #0077b6;
+        margin-bottom: 20px;
+    }
 
-#about p {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 40px;
-}
+    .pricing-card ul {
+        list-style-type: none;
+        padding: 0;
+        margin-bottom: 20px;
+    }
 
-.about-team {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    text-align: center;
-}
+    .pricing-card button {
+        background-color: #0077b6;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
 
-.team-member img {
-    width: 100%;
-    border-radius: 50%;
-}
+    .pricing-card button:hover {
+        background-color: #005f8c;
+    }
 
-.team-member h3 {
-    font-size: 20px;
-    color: #0077b6;
-    margin-top: 10px;
-}
+    /* -------------------- About Section -------------------- */
+    #about {
+        padding: 40px 20px;
+        background-color: #f0f0f0;
+        text-align: center;
+    }
 
-.team-member p {
-    color: #777;
-    font-size: 14px;
-}
+    #about h2 {
+        font-size: 36px;
+        color: #0077b6;
+        margin-bottom: 20px;
+    }
 
-/* -------------------- Contact Section -------------------- */
-#contact {
-    padding: 40px 20px;
-    background-color: #fff;
-    text-align: center;
-}
+    #about p {
+        font-size: 18px;
+        color: #555;
+        margin-bottom: 40px;
+    }
 
-#contact h2 {
-    font-size: 36px;
-    color: #0077b6;
-    margin-bottom: 20px;
-}
+    .about-team {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        text-align: center;
+    }
 
-.contact-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
+    .team-member img {
+        width: 100%;
+        border-radius: 50%;
+    }
 
-.contact-info p {
-    font-size: 16px;
-    color: #777;
-    margin: 10px 0;
-}
+    .team-member h3 {
+        font-size: 20px;
+        color: #0077b6;
+        margin-top: 10px;
+    }
 
-form {
-    width: 300px;
-}
+    .team-member p {
+        color: #777;
+        font-size: 14px;
+    }
 
-.form-group input, 
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
+    /* -------------------- Contact Section -------------------- */
+    #contact {
+        padding: 40px 20px;
+        background-color: #fff;
+        text-align: center;
+    }
 
-form button {
-    background-color: #0077b6;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    font-size: 16px;
-    cursor: pointer;
-}
+    #contact h2 {
+        font-size: 36px;
+        color: #0077b6;
+        margin-bottom: 20px;
+    }
 
-form button:hover {
-    background-color: #005f8c;
-}
+    .contact-container {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+    }
 
-/* -------------------- Footer Section -------------------- */
-.footer {
-    display: flex;
-    justify-content: space-between;
-    background: linear-gradient(45deg, #00b8d4, #0077b6);
-    padding: 20px;
-    color: white;
-}
+    .contact-info p {
+        font-size: 16px;
+        color: #777;
+        margin: 10px 0;
+    }
 
-.footer .social-icons a img {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-}
+    form {
+        width: 300px;
+    }
 
-.footer .social-icons a img:hover {
-    transform: scale(1.2);
-}
-.footer p {
-    font-size: 14px;
-}
+    .form-group input, 
+    .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
 
-.brush-options {
-    margin: 20px 0;
-    padding: 10px;
-    background-color: #f0f0f0; /* Light background for contrast */
-    border-radius: 5px;
-}
+    form button {
+        background-color: #0077b6;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
-.brush-options label {
-    margin-right: 10px;
-    font-weight: bold;
-}
+    form button:hover {
+        background-color: #005f8c;
+    }
 
-.brush-options select {
-    margin-right: 20px;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-}
+    /* -------------------- Footer Section -------------------- */
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        background: linear-gradient(45deg, #00b8d4, #0077b6);
+        padding: 20px;
+        color: white;
+    }
 
-#eraserBtn {
-    background-color: #ff4d4d; /* Red color for the eraser */
-    color: white; /* Text color */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 15px; /* Padding for the button */
-    cursor: pointer; /* Pointer cursor on hover */
-    margin: 10px; /* Margin for spacing */
-}
+    .footer .social-icons a img {
+        width: 20px;
+        height: 20px;
+        transition: transform 0.3s ease;
+    }
 
-#eraserBtn:hover {
-    background-color: #e60000; /* Darker red on hover */
-}
+    .footer .social-icons a img:hover {
+        transform: scale(1.2);
+    }
+
+    .footer p {
+        font-size: 14px;
+    }
+
+    .brush-options {
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #f0f0f0; /* Light background for contrast */
+        border-radius: 5px;
+    }
+
+    .brush-options label {
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    .brush-options select {
+        margin-right: 20px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    #eraserBtn {
+        background-color: #ff4d4d; /* Red color for the eraser */
+        color: white; /* Text color */
+        border: none; /* Remove border */
+        border-radius: 5px; /* Rounded corners */
+        padding: 10px 15px; /* Padding for the button */
+        cursor: pointer; /* Pointer cursor on hover */
+        margin: 10px; /* Margin for spacing */
+    }
+
+    #eraserBtn:hover {
+        background-color: #e60000; /* Darker red on hover */
+    }
