@@ -90,6 +90,8 @@
             <button id="clearBtn">Clear</button>
             <button id="saveBtn">Save & Download</button>
             <button id="eraserBtn">Eraser</button>
+            <label for="eraserSize" class="eraser-size-label" style="color: #003366;">Eraser Size:</label>
+            <input type="range" id="eraserSize" min="1" max="50" value="10" onchange="updateEraserSize(this.value)">
 
             <!-- File Format Selection -->
             <label for="fileformat" class="file-format">Format:</label>
