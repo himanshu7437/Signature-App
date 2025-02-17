@@ -5,6 +5,7 @@ const clearBtn = document.getElementById('clearBtn');  // Button to clear the ca
 const saveBtn = document.getElementById('saveBtn');  // Button to save the canvas content
 const eraserBtn = document.getElementById('eraserBtn');  // Eraser button
 const brushSizeInput = document.getElementById('brushSize');  // Brush size input
+const eraserSizeInput = document.getElementById('eraserSize'); //Eraser size input
 
 // Set initial drawing color and properties
 let currentColor = '#000000';  // Default color is black
@@ -13,18 +14,29 @@ let lastX = 0;  // Last X position of the mouse
 let lastY = 0;  // Last Y position of the mouse
 let lineWidth = 2;  // Line width for drawing
 let isEraserActive = false;  // Flag to track if eraser is active
+let eraserSize=10;
 
 // Function to select color
 function selectColor(color) {
     currentColor = color;  // Update the current color
     ctx.strokeStyle = currentColor;  // Set the stroke color to the selected color
     isEraserActive = false;  // Deactivate eraser when a color is selected
+    canvas.style.cursor='crosshair';
 }
 
 // Function to update brush size
 function updateBrushSize(size) {
     lineWidth = size;  // Update line width based on input
 }
+
+function updateEraserSize(size) {
+    eraserSize=size;
+}
+
+eraserSizeInput.addEventListener('input',(e)=>{
+    updateEraserSize(e.target.value);
+});
+
 
 // Set up the canvas for drawing
 function setupCanvas() {
@@ -40,19 +52,52 @@ function startDrawing(e) {
     [lastX, lastY] = [e.offsetX, e.offsetY];  // Set initial drawing coordinates
 }
 
+function drawCursor(e) {
+    const cursorCanvas = document.createElement('canvas');
+    const cursorCtx = cursorCanvas.getContext('2d');
+    const size = eraserSize * 2;
+    cursorCanvas.width = size;
+    cursorCanvas.height = size;
+    cursorCtx.clearRect(0, 0, size, size);
+    cursorCtx.beginPath();
+    cursorCtx.arc(size / 2, size / 2, eraserSize, 0, Math.PI * 2);
+    cursorCtx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    cursorCtx.fill();
+    const cursorURL = cursorCanvas.toDataURL();
+    canvas.style.cursor = `url(${cursorURL}) ${eraserSize} ${eraserSize}, auto`;
+}
+
 // Stop drawing when mouse is released or moves out of the canvas
 function stopDrawing() {
     drawing = false;  // Set drawing flag to false
     ctx.beginPath();  // Begin a new path to prevent connecting to previous paths
 }
 
+function setupCanvas() {
+    canvas.addEventListener('mousedown', startDrawing); 
+    canvas.addEventListener('mousemove', draw); 
+    canvas.addEventListener('mousemove', e => {
+        if (isEraserActive) drawCursor(e); 
+    });
+    canvas.addEventListener('mouseup', stopDrawing); 
+    canvas.addEventListener('mouseout', stopDrawing); 
+    ctx.clearRect(0, 0, canvas.width, canvas.height); 
+    ctx.fillStyle = 'rgba(0,0,0,0)';
+}
+
 // Draw on the canvas
 function draw(e) {
     if (!drawing) return;  // Don't draw if not in drawing mode
 
-    ctx.lineWidth = lineWidth;  // Set line width
+    ctx.lineWidth = isEraserActive ? eraserSize : lineWidth; // Set line width
     ctx.lineCap = 'round';  // Set line cap style
-    ctx.strokeStyle = isEraserActive ? '#ffffff' : currentColor;  // Set stroke color based on eraser state
+    
+    if (isEraserActive) {
+        ctx.globalCompositeOperation='destination-out';
+    } else {
+        ctx.globalCompositeOperation='source-over'; 
+        ctx.strokeStyle=currentColor; 
+    }
 
     ctx.beginPath();  // Begin a new path
     ctx.moveTo(lastX, lastY);  // Move to the last position
@@ -67,10 +112,13 @@ eraserBtn.addEventListener('click', () => {
     isEraserActive = !isEraserActive; // Toggle eraser state
     if (isEraserActive) {
         eraserBtn.textContent = 'Brush'; // Change button text to indicate brush mode
-        ctx.strokeStyle = '#ffffff'; // Set stroke color to match background for erasing
+        canvas.style.cursor = 'none';
+        canvas.addEventListener('mousemove', drawCursor);
     } else {
         eraserBtn.textContent = 'Eraser'; // Change button text to indicate eraser mode
         ctx.strokeStyle = currentColor; // Restore stroke color to current color
+        canvas.style.cursor = 'crosshair';
+        canvas.removeEventListener('mousemove', drawCursor);
     }
 });
 
