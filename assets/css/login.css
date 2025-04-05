@@ -141,7 +141,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
     background: linear-gradient(45deg, #00b8d4, #0077b6);
     position: fixed;
     width: 100vw;
@@ -209,6 +209,7 @@ a:hover {
 .footer .social-icons {
     display: flex;
     justify-content: center;
+    align-items: baseline;
     gap: 15px;
 }
 

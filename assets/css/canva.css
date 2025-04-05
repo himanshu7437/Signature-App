@@ -209,7 +209,7 @@ button:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px;
+    padding: 20px;
     background: linear-gradient(45deg, #00b8d4, #0077b6);
     position: fixed;
     width: 100%;
@@ -256,168 +256,6 @@ button:hover {
 
 .login-btn:hover {
     background-color: #008c91;
-}
-
-/* ===========================
-   Footer Styling
-============================= */
-/*
-.footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(45deg, #00b8d4, #0077b6);
-    padding: 10px 50px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    color: #fff;
-    font-size: 14px;
-}
-
-.footer .connect {
-    text-align: right;
-}
-
-.footer .connect p {
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.footer .social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.footer .social-icons a img {
-    width: 20px;
-    height: 20px;
-    transition: transform 0.3s ease;
-}
-
-.footer .social-icons a img:hover {
-    transform: scale(1.2);
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-}*/
-
-/* Footer Credits 
-.name p {
-    font-size: 14px;
-}
-
-.alink {
-    color: #fff;
-}
-
-.alink:hover {
-    text-decoration: underline;
-}
-*/
-/* ===========================
-   new footer
-============================= */
-/* footer */
-    
-.footer-logo img{
-    width: px;
-    height: 30px;
-    transform: scale(1.5);
-    margin-right: -32px;
-    margin-bottom: 9px;
-    cursor: pointer
-
-}
-.footer-logo{
-    display: flex;
-    padding-bottom: 10px;
-}
-.footer-body{
-display: grid;
-justify-content: center;
-align-content: end;
-padding: 25px;
-}
-
-footer{
-position: relative;
-width:100%;
-height: auto;
-background: linear-gradient(45deg, #00b8d4, #0077b6);
-
-}
-.footer-container{
-width:100%;
-display: grid;
-grid-template-columns: 2fr 1fr 1fr 1fr;
-grid-gap:20px;
-padding: 10px;
-
-
-}
-.footer-container .sec h2{
-position: relative;
-color: black;
-font-weight: 600;
-margin-bottom: 15px;
-text-align: left;
-
-}
-.footer-container .sec p{
-color:white; 
-text-align: justify;
-
-
-}
-
-/* quick links and support combine*/
-.footer-container .quicklinks{
-position: relative;
-
-}
-.footer-container .sec ul li a{
- color: white;
-}
-.footer-container .quicklinks ul li{
-list-style: none;
-text-align: justify;
-width:250px
-}
-.footer-container .quicklinks ul li a{
-text-decoration: none;
-margin-bottom: 2px;
-display: inline-block;
-padding: 1px 2px 1px 2px;
-}
-.footer-container .sec ul li a:hover{
-position: relative;
-left:8px;
-}
-
-/* social */
-.footer-container .social{
-margin-top: 20px;
-display: grid;
-grid-template-columns: repeat(5,50px);
-width:250px;
-
-
-}
-.footer-container .social{
-list-style: none;
-}
-.footer-container .social li a{
-display:inline-block;
-width: 3px;
-height: 36px;
-padding: 1px;
-display: grid;
-align-content: center;
-text-decoration: none;
-}
-.footer-container .social li a i{
-font-size: 25px;
-position: relative;
-left:5px;
 }
 
 .social li .fa-facebook-f{
@@ -480,6 +318,7 @@ grid-gap: 20px;
    Button Styling
 ============================= */
 .buttons {
+    gap: 10px;
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
@@ -509,4 +348,68 @@ input[type="range"]::-webkit-slider-thumb {
     background: #00b8d4; /* Color of the thumb */
     border-radius: 50%; /* Rounded thumb */
     cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* ....................Footer...................... */
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(45deg, #00b8d4, #0077b6);
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer .connect {
+    margin-bottom: 10px;
+    margin-right: 50px;
+}
+
+.footer .connect p {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer .social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.footer .social-icons a img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.footer .social-icons a img:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Hover effect on icons */
+}
+
+.name {
+    margin-left: 50px;
+}
+
+.name p {
+    font-size: 14px;
+}
+
+.alink {
+    color: #fffefe;
+}
+
+.alink:hover {
+    text-decoration: underline;
+}
+
+.footer p {
+    font-size: 14px;
 }
