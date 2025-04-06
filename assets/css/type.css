@@ -138,7 +138,6 @@ button:hover {
     transform: translateX(-5px);  /* Slight movement on hover to show interaction */
 }
 
-
 .container h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
@@ -190,10 +189,12 @@ button:hover {
     cursor: pointer
 
 }
+
 .footer-logo{
     display: flex;
     padding-bottom: 10px;
 }
+
 .footer-body{
 display: grid;
 justify-content: center;
@@ -206,7 +207,6 @@ position: relative;
 width:100%;
 height: auto;
 background: linear-gradient(45deg, #00b8d4, #0077b6);
-
 }
 .footer-container{
 width:100%;
@@ -214,8 +214,6 @@ display: grid;
 grid-template-columns: 2fr 1fr 1fr 1fr;
 grid-gap:20px;
 padding: 10px;
-
-
 }
 .footer-container .sec h2{
 position: relative;
@@ -335,7 +333,6 @@ grid-gap: 20px;
    }
    
 }
-
 
 /* Additional Content Styling */
 #fontStylesContainer {
